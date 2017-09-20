@@ -47,6 +47,23 @@ var polyline_options = {
     var polyline = L.polyline(pline, polyline_options).addTo(map);
   }
 })
+  
+  // Set bounds
+  mapboxgl.accessToken = '<pk.eyJ1IjoieXV6aGVuZyIsImEiOiJjaWw1cWJldjQwMDFudWhsdjNkZWxheHRoIn0.NyZJ4mQ0uZNVtjgiS7fuyw>';
+
+var bounds = [
+    [-84.922810, -179.488569], // Southwest coordinates
+    [84.907230, 178.755197]  // Northeast coordinates
+];
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-73.9978, 40.7209],
+    zoom: 13,
+    maxBounds: bounds // Sets bounds as max
+});
+
 
 </script>
 </body>
