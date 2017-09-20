@@ -19,9 +19,13 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoieXV6aGVuZyIsImEiOiJjaWw1cWJldjQwMDFudWhsdjNkZWxheHRoIn0.NyZJ4mQ0uZNVtjgiS7fuyw';
 
-var map = L.mapbox.map('map', 'yuzheng.ffea7ea6')
-  .setView([37.8, -96], 4);
-
+var map = L.mapbox.map('map', 'yuzheng.ffea7ea6', 
+	{ minZoom: 5, 
+	  maxZoom: 12, 
+	  maxBounds: [[84.922810, -178.171715],[-79.356199, 176.626955]] 
+	}).setView([37.8, -96], 4);
+	
+	
 d3.json('20160227_flight.geojson',function(d){
   console.log(d);
   pllst = [];
@@ -48,11 +52,6 @@ var polyline_options = {
   }
 })
   
-  // Set bounds
-  var p1 = L.point(-84.922810, -179.488569),
-	p2 = L.point(84.907230, 178.755197),
-	bounds = L.bounds(p1, p2);
-
 </script>
 </body>
 </html>
