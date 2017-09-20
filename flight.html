@@ -49,21 +49,9 @@ var polyline_options = {
 })
   
   // Set bounds
-  mapboxgl.accessToken = '<pk.eyJ1IjoieXV6aGVuZyIsImEiOiJjaWw1cWJldjQwMDFudWhsdjNkZWxheHRoIn0.NyZJ4mQ0uZNVtjgiS7fuyw>';
-
-var bounds = [
-    [-84.922810, -179.488569], // Southwest coordinates
-    [84.907230, 178.755197]  // Northeast coordinates
-];
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-73.9978, 40.7209],
-    zoom: 13,
-    maxBounds: bounds // Sets bounds as max
-});
-
+  var p1 = L.point(-84.922810, -179.488569),
+	p2 = L.point(84.907230, 178.755197),
+	bounds = L.bounds(p1, p2);
 
 </script>
 </body>
